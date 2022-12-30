@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><h2>#{{pokeState.pokemonId}} {{pokeState.pokeName}}</h2></mat-card-title>
+      <mat-chip selected>&nbsp;<a
+        style="text-transform: capitalize;font-size: smaller;">{{pokeState.pokeType.join('&nbsp; |
+        &nbsp;')}}</a>
+        </mat-chip>&nbsp;
+    </mat-card-header>
+    <img mat-card-image src="{{pokeState.pokeImage}}" alt="Pokemon Photo">
+    <mat-card-content>
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Move : <a style="text-transform: capitalize;">{{pokeState.moves}}</a>
+        </h2>
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Weight : <a>{{pokeState.weight}}</a>
+        </h2>
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Height : <a>{{pokeState.height}}</a>
+        </h2>
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Base Experience: {{pokeState.baseExperience}} Exp
+        </h2>
+
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            HP: {{pokeState.hp}}
+        </h2>
+        <mat-progress-bar color="warn" mode="determinate" value="{{pokeState.hp}}"></mat-progress-bar>
+
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Attack: {{pokeState.attack}}
+        </h2>
+        <mat-progress-bar color="warn" mode="determinate" value="{{pokeState.attack}}"></mat-progress-bar>
+
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Defense: {{pokeState.defense}}
+        </h2>
+        <mat-progress-bar color="warn" mode="determinate" value="{{pokeState.defense}}"></mat-progress-bar>
+       
+        <h2 style="color: black;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Speed: {{pokeState.speed}}</h2>
+        <mat-progress-bar color="warn" mode="determinate" value="{{pokeState.speed}}"></mat-progress-bar>
+        
+        <br><br>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-fab extended color="warn" style="margin:auto;" (click)="saveToMyPokemon()">
+            <mat-icon>favorite</mat-icon>
+            Catch
+          </button>
+    </mat-card-actions>
+  </mat-card>
+  

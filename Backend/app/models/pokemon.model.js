@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       name: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       number: {
         type: Sequelize.INTEGER,
