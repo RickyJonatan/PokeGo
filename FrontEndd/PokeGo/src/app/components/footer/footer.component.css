@@ -2,6 +2,7 @@
     margin: auto;
     justify-content: center;
     text-align: center;
-    display: flex;
     font-weight: bold;
+    position: fixed;
+    bottom: 0;
 }

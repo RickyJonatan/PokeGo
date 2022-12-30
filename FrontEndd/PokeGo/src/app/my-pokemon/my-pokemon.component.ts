@@ -75,13 +75,12 @@ export class MyPokemonComponent implements OnInit{
 
     res => {
       alert("Your Pokemon Has Been Released");
-      window.location.reload();
     },
     err => {
       console.log(err);
     }
    );
-
+   window.location.reload();
   }
 
   renamePokemon(id:any) :void {
@@ -94,6 +93,7 @@ export class MyPokemonComponent implements OnInit{
         console.log(err);
       }
     );
+    window.location.reload();
   }
 
 
