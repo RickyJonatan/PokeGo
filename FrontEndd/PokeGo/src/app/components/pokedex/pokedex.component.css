@@ -1,12 +1,16 @@
 table {
-    width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 15%;
-  }
+  width: 100%;
+  margin: auto;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+  margin: auto;
+}
+
+td, th {
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+}

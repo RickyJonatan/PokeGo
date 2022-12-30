@@ -12,12 +12,19 @@ import { MatSort } from '@angular/material/sort';
 })
 export class MyPokemonComponent implements OnInit{
 
-  displayedColumns: string[] = ['id', 'image', 'name'];
+  displayedColumns: string[] = ['id', 'image', 'name','action'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  currentPokemon = {
+    index : '',
+    number: 0,
+    image : '',
+    name  : ''
+  }
 
   constructor(private pokeService : PokemonService, private router:Router){}
   ngOnInit(): void {
@@ -30,12 +37,12 @@ export class MyPokemonComponent implements OnInit{
       this.pokeService.getAllMyPokemon().subscribe(
         res => {
           myPokemon = {
-            index: res[i].id,
+            index : res[i].id,
             number: res[i].number,
             image : res[i].image,
             name  : res[i].name,
-          };
-          console.log(res);
+          }
+
           this.data.push(myPokemon)
           this.dataSource = new MatTableDataSource<any>(this.data);
           this.dataSource.paginator = this.paginator
@@ -61,6 +68,32 @@ export class MyPokemonComponent implements OnInit{
 
   async getDetail(row : any){
     this.router.navigateByUrl(`pokemondetail/${row.index}`);
+  }
+
+  releasePokemon(id:any) : void {
+   this.pokeService.deleteMyPokemon(id).subscribe(
+
+    res => {
+      alert("Your Pokemon Has Been Released");
+      window.location.reload();
+    },
+    err => {
+      console.log(err);
+    }
+   );
+
+  }
+
+  renamePokemon(id:any) :void {
+    this.pokeService.renameMyPokemon(id,this.currentPokemon).subscribe(
+
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 

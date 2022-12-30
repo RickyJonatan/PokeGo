@@ -8,9 +8,6 @@ module.exports = app => {
   
     // Retrieve all Pokemon
     router.get("/", pokemons.findAll);
- 
-    // Retrieve Pokemon by Id
-    router.get("/:id", pokemons.findOne);
   
     // Updat ePokemon
     router.put("/:id", pokemons.update);

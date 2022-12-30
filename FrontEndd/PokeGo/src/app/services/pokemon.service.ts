@@ -27,6 +27,14 @@ export class PokemonService {
     return this.http.get<Pokemon[]>(apiUrl)
   }
 
+  deleteMyPokemon(id : any):Observable<any>{
+    return this.http.delete(`${apiUrl}/${id}`)
+  }
+
+  renameMyPokemon(id : any, data:any):Observable<any>{
+    return this.http.put(`${apiUrl}/${id}`,data)
+  }
+
   
 
 
